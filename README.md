@@ -33,25 +33,17 @@ Make sure you have the following installed on your system:
         ```sh
         source myenv/bin/activate
         ```
-
-4. **Create `requirements.txt` and add the following content:**
-    ```plaintext
-    Django>=3.0,<4.0
-    requests>=2.25.1
-    django-cors-headers>=3.7.0
-    ```
-
-5. **Install the backend dependencies:**
+4. **Install the backend dependencies:**
     ```sh
     pip install -r requirements.txt
     ```
 
-6. **Apply migrations:**
+5. **Apply migrations:**
     ```sh
     python manage.py migrate
     ```
 
-7. **Run the Django development server:**
+6. **Run the Django development server:**
     ```sh
     python manage.py runserver
     ```
