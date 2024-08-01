@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+*.so
+
+# Environments
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+env/
+
+# Django
+*.log
+*.pot
+*.pyc
+local_settings.py
+db.sqlite3
+media
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+*.stackdump
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Django specific
+*.sqlite3
+
+# React build directory
+build/
+
+# Tailwind
+.tailwind
+
+# Exclude virtual environment
+Backend/myenv/
