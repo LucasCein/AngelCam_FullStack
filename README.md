@@ -18,13 +18,16 @@ Make sure you have the following installed on your system:
     git clone <repository-url>
     cd <repository-directory>
     ```
-
-2. **Create a virtual environment:**
+2. **Navigate to the backend directory:**
+    ```sh
+    cd Backend
+    ```
+3. **Create a virtual environment:**
     ```sh
     python -m venv myenv
     ```
 
-3. **Activate the virtual environment:**
+4. **Activate the virtual environment:**
     - On Windows:
         ```sh
         myenv\Scripts\activate
@@ -33,17 +36,17 @@ Make sure you have the following installed on your system:
         ```sh
         source myenv/bin/activate
         ```
-4. **Install the backend dependencies:**
+5. **Install the backend dependencies:**
     ```sh
     pip install -r requirements.txt
     ```
 
-5. **Apply migrations:**
+6. **Apply migrations:**
     ```sh
     python manage.py migrate
     ```
 
-6. **Run the Django development server:**
+7. **Run the Django development server:**
     ```sh
     python manage.py runserver
     ```
@@ -52,7 +55,7 @@ Make sure you have the following installed on your system:
 
 1. **Navigate to the frontend directory:**
     ```sh
-    cd frontend
+    cd FrontEnd/angelcam-frontend
     ```
 
 2. **Install the frontend dependencies:**
