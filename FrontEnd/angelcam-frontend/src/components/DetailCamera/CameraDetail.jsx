@@ -1,13 +1,16 @@
-import { useEffect, useState } from 'react';
+// src/components/CameraDetail.js
+import { useEffect, useState, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import LiveStream from './LiveStream';
 import Recordings from './Recordings';
 import ModalPlayer from './ModalPlayer';
+import { TokenContext } from '../../context/TokenContext.jsx';
 
 const CameraDetail = () => {
     const location = useLocation();
     const camera = location.state?.camera;
 
+    const { token } = useContext(TokenContext);  
     const [recordingInfo, setRecordingInfo] = useState(null);
     const [recordingUrl, setRecordingUrl] = useState(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -19,12 +22,11 @@ const CameraDetail = () => {
     }, [camera]);
 
     const fetchRecordingInfo = async (cameraId) => {
-        const token = process.env.REACT_APP_ACCESS_TOKEN;
         const response = await fetch(`https://api.angelcam.com/v1/shared-cameras/${cameraId}/recording/`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
-                'Authorization': `PersonalAccessToken ${token}`
+                'Authorization': `PersonalAccessToken ${token}`  // Usa el token del contexto
             }
         });
         const data = await response.json();
@@ -32,12 +34,11 @@ const CameraDetail = () => {
     };
 
     const fetchRecordingUrl = async (cameraId, start, end) => {
-        const token = process.env.REACT_APP_ACCESS_TOKEN;
         const response = await fetch(`https://api.angelcam.com/v1/shared-cameras/${cameraId}/recording/stream/?start=${start}&end=${end}`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
-                'Authorization': `PersonalAccessToken ${token}`
+                'Authorization': `PersonalAccessToken ${token}`  // Usa el token del contexto
             }
         });
         const data = await response.json();
