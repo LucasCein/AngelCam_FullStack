@@ -4,7 +4,7 @@ const Cameras = () => {
     let location = useLocation();
     const navigate = useNavigate();
 
-    const cameras = location.state?.cameras || []; // Verifica si location.state.cameras es undefined y asigna un array vacío si es así
+    const cameras = location.state?.cameras || []; 
 
     const handleSelectCamera = (camera) => {
         navigate('/camera-detail', { state: { camera } });
